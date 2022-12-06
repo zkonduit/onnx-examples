@@ -38,7 +38,7 @@ def main():
 
     data = dict(input_shapes = [shape, shape, shape],
                 input_data = [d],
-                public_inputs = [((o).detach().numpy()).reshape([-1]).tolist() for o in torch_out])
+                output_data = [((o).detach().numpy()).reshape([-1]).tolist() for o in torch_out])
 
     # Serialize data into file:
     json.dump( data, open( "input.json", 'w' ) )
